@@ -1,0 +1,30 @@
+<br>
+<div class="container" style="text-align: center">
+  <h1>Angular Subsink Example</h1>
+  <br>
+  <div class="row mt-12" >
+    <form class="form-inline" style="margin: 0 auto; text-align: center">
+      <div class="form-group mx-sm-3">
+        <input type="text" class="form-control" #field placeholder="Message">
+      </div>
+      <div class="form-group mx-sm-3">
+        <button type="button" class="btn btn-primary" (click)="capitalizeFirstLetter(field.value)">Capitalize</button>
+      </div>
+      <div class="form-group mx-sm-3">
+        <button type="button" class="btn btn-danger" (click)="hideCards()">Close Card</button>
+      </div>
+      <div class="form-group mx-sm-3">
+        <button type="button" class="btn btn-success" (click)="displayCards()">Open Card</button>
+      </div>
+    </form>
+  </div>
+  <br>
+  <div class="row mt-5">
+    <app-card *ngIf="showCards"></app-card>
+  </div>
+  <div class="row mt-5">
+    <app-subsink *ngIf="showCards"></app-subsink>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
